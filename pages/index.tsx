@@ -215,7 +215,7 @@ export default function Home() {
             <textarea
               className={styles.textarea}
               typeof='text'
-              placeholder='자유롭게 설명해보세요!'
+              placeholder='Text로 생성하는 이미지입니다. 자유롭게 설명해보세요!'
               spellCheck={false}
               value={textareaInput}
               onChange={mainTextareaOnchangeHandler}
