@@ -13,6 +13,7 @@ import { PapagoResponseType } from './api/papago';
 import { ImageResponseType } from './api/image';
 import { useRouter } from 'next/router';
 import { CreateImageRequestSizeEnum } from 'openai';
+import Layout from '../components/layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -177,13 +178,7 @@ export default function Home() {
   }
 
   return (
-    <>
-      <Head>
-        <title>지수의 Open-Ai-Image</title>
-        <meta name='description' content='PapagoXOpen-Ai-Image' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+    <Layout>
       {showOverlay && (
         <div className={styles.overlay}>
           <div className={styles.form}>
@@ -269,6 +264,6 @@ export default function Home() {
           )}
         </div>
       </main>
-    </>
+    </Layout>
   );
 }

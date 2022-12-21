@@ -10,6 +10,7 @@ import { PapagoResponseType } from './api/papago';
 import { ImageResponseType } from './api/image';
 import Head from 'next/head';
 import { CreateImageRequestSizeEnum } from 'openai';
+import Layout from '../components/layout';
 
 const statusTextOptions = {
   sensing: '언어 감지 중..',
@@ -171,13 +172,7 @@ export default function Mobile() {
   }
 
   return (
-    <>
-      <Head>
-        <title>지수의 Open-Ai-Image</title>
-        <meta name='description' content='PapagoXOpen-Ai-Image' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+    <Layout>
       {showOverlay && (
         <div className={styles.overlay}>
           <div className={styles.form}>
@@ -290,6 +285,6 @@ export default function Mobile() {
           </div>
         )}
       </main>
-    </>
+    </Layout>
   );
 }
