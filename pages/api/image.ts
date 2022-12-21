@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import withHandler, { ResponseType } from '../../lib/server/withHandler';
-import { Configuration, OpenAIApi } from 'openai';
+import { Configuration, CreateImageRequestSizeEnum, OpenAIApi } from 'openai';
 
 export interface ImageResponseType extends ResponseType {
   imageUrl: string;
@@ -11,19 +11,25 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-async function getOpenaiImageUrl(text: string) {
+async function getOpenaiImageUrl(
+  text: string,
+  size: CreateImageRequestSizeEnum
+) {
   const response = await openai.createImage({
     prompt: text,
     n: 1,
-    size: '512x512',
+    size,
   });
   return response.data.data[0].url;
 }
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { text } = req.query;
+  const { text, size } = req.query;
   console.log(text);
-  const imageUrl = await getOpenaiImageUrl(text as string);
+  const imageUrl = await getOpenaiImageUrl(
+    text as string,
+    size as CreateImageRequestSizeEnum
+  );
   return res.json({ ok: true, imageUrl });
 }
 

@@ -1,43 +1,68 @@
-.main {
-  display: flex;
-  padding-top: 100px;
-}
-.input-form {
-  width: 50%;
-}
-
 .title {
-  font-size: 2rem;
+  padding-top: 100px;
+  font-size: 24px;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
-
-.main .form {
-  width: 70%;
+.main {
+  width: 270px;
   margin: 0 auto;
 }
 
-.main textarea {
+.current-page {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.current-page .page {
+  font-size: 16;
+  font-weight: 600;
+  margin-right: 7px;
+  color: #d9d9d9;
+  cursor: pointer;
+}
+.current-page .page span {
+  display: block;
+  margin-bottom: 5px;
+}
+.current-page .active span {
+  color: blue;
+}
+
+.current-page .line {
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+}
+
+.main .input-form {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main textarea,
+.overlay textarea {
   all: unset;
   border: 2px solid #d9d9d9;
   border-radius: 5px;
-  padding: 20px;
-  width: 100%;
-  height: 300px;
+  padding: 10px;
+  width: 270px;
+  height: 270px;
   overflow-y: scroll;
   overflow-x: unset;
-  font-size: 1.2rem;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 .textarea::placeholder {
-  font-size: 1.2rem;
+  font-size: 16px;
 }
 .textarea:focus {
   border-color: #0000ff;
   /* color: #a200ff; */
 }
 .notice-lang {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 0.9rem;
   color: blue;
 }
@@ -51,13 +76,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 15px;
   background-color: blue;
   padding: 10px;
   border-radius: 3px;
   color: whitesmoke;
   font-weight: bold;
   cursor: pointer;
+  font-size: 16px;
+}
+.submit-btn {
+  margin-right: 8px;
 }
 
 .retry-btn {
@@ -71,13 +99,13 @@
   cursor: pointer;
   margin-right: 15px;
 }
-.retry-btn img {
+/* .retry-btn img {
   transition-duration: 0.3s;
 }
 .retry-btn img:hover {
   transform: rotateZ(100deg);
   transition-duration: 0.3s;
-}
+} */
 .download-btn {
   all: unset;
   display: flex;
@@ -92,13 +120,18 @@
 }
 
 .result {
-  width: 550px;
-  height: 550px;
+  width: 270px;
+  height: 270px;
   border: 1px solid #d9d9d9;
-  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
+  font-size: 12px;
+}
+
+.output-wrapper button {
+  margin-right: 8px;
 }
 
 .result.loading {
@@ -106,7 +139,7 @@
   background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
   border-radius: 5px;
   background-size: 200% 100%;
-  animation: 1s shine linear infinite;
+  animation: 0.7s shine linear infinite;
 }
 
 @keyframes shine {
@@ -130,17 +163,8 @@
   position: relative;
 }
 .overlay textarea {
-  all: unset;
-  border: 2px solid #d9d9d9;
-  margin-bottom: 20px;
   background-color: white;
-  border-radius: 5px;
-  padding: 20px;
-  width: 500px;
-  height: 300px;
-  overflow-y: scroll;
-  overflow-x: unset;
-  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 .close-overlay-btn {
   all: unset;
