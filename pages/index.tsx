@@ -109,11 +109,14 @@ export default function Home() {
 
   // 번역 결과 보기
   async function translateHandler() {
+    const text = textareaInput.trim();
+    if (!text.length) {
+      alert('문장을 입력하세요!');
+      return;
+    }
     if (!translate.new) {
       const prevStatus = statusText;
       setStatusText(statusTextOptions.translating);
-      const text = textareaInput.trim();
-      if (!text.length) return;
       const papagoResponseData: PapagoResponseType = await fetch(
         `/api/papago?text=${text}`
       ).then((res) => res.json());
@@ -153,7 +156,10 @@ export default function Home() {
   // 수정된 결과 보기
   async function translatedTextSubmitHandler() {
     const text = translate.result.trim();
-    if (!text.length) return;
+    if (!text.length) {
+      alert('문장을 입력하세요!');
+      return;
+    }
     setShowOverlay(false);
     setImageUrl((prev) => ({ ...prev, isLoading: true }));
     const imageResponseData: ImageResponseType = await fetch(
