@@ -265,7 +265,7 @@ export default function Mobile() {
                 // <span>이미지를 생성하는데 시간이 다소 걸릴 수 있어요</span>
                 <span></span>
               ) : imageUrl.error ? (
-                <span>이미지를 불러올 수 없습니다.</span>
+                <h2>이미지를 불러올 수 없습니다.</h2>
               ) : !imageUrl.url.length ? null : (
                 <Image
                   src={imageUrl.url}

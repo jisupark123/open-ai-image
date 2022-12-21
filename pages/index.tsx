@@ -254,7 +254,8 @@ export default function Home() {
           }`}
         >
           {imageUrl.isLoading ? (
-            <h2>Loading...</h2>
+            // <span>Loading...</span>
+            <span></span>
           ) : imageUrl.error ? (
             <h2>이미지를 불러올 수 없습니다.</h2>
           ) : !imageUrl.url.length ? null : (
