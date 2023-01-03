@@ -6,7 +6,7 @@
 
 </br>
 
-> 한국어 입력 → Papago 번역 → Open-AI-Image 생성
+> 한국어 입력 → 한국어 감지 → Papago 번역 → Open-AI-Image 생성 영어 입력 → 영어 감지 → Open-AI-Image 생성
 
 </br>
 </br>
